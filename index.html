@@ -145,9 +145,24 @@ section{position:relative}
 .proof .stat b{display:block;font-family:var(--fd);font-size:clamp(52px,6vw,76px);color:var(--blue);line-height:.95;letter-spacing:-.02em}
 .proof .stat p{margin-top:10px;max-width:34ch;font-size:15.5px;color:var(--ink-2)}
 .proof .stat small{display:block;margin-top:10px;font-size:11.5px;color:var(--ink-3);font-style:italic}
-.lgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .lt{background:#fff;border:1px solid var(--line);border-radius:12px;aspect-ratio:1.9;display:grid;place-items:center;padding:12% 14%;min-width:0;overflow:hidden}
 .lt img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+.userow{margin-bottom:38px;padding:22px 24px;background:linear-gradient(180deg,#fff,var(--blue-light) 300%);border:1px solid var(--blue-light);border-radius:var(--r);box-shadow:var(--shadow)}
+.userow .lede{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-bottom:14px}
+.userow .lede p{font-size:13.5px;color:var(--ink-2)}
+.usegrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.lt.txt b{font:700 clamp(15px,1.6vw,19px)/1 var(--fb);letter-spacing:.05em;color:var(--ink-2)}
+@media (max-width:760px){.usegrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:460px){.usegrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.credband{margin-top:26px;border-radius:var(--r);background:var(--blue);color:#fff;padding:clamp(22px,3vw,32px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,3vw,36px);align-items:center}
+.credband h3{font-size:clamp(22px,2.6vw,30px);color:#fff}
+.credband h3 em{color:var(--orange)}
+.credband .cols{display:grid;gap:10px}
+.credband .cg{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 16px}
+.credband .cg small{display:block;font:600 10px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.credband .cg p{font-size:13.5px;color:#dfe7f6}
+@media (max-width:860px){.credband{grid-template-columns:1fr}}
 .pubrow{margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
 .pubrow .lede{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-bottom:16px}
 .pubrow h3{font-size:clamp(20px,2.4vw,26px)}
@@ -172,7 +187,7 @@ section{position:relative}
 .vsmid span{width:46px;height:46px;border-radius:50%;background:var(--orange);color:#3b2a06;display:grid;place-items:center;font-size:20px;box-shadow:0 10px 26px -12px rgba(249,171,0,.6)}
 @media (max-width:900px){.ps{grid-template-columns:1fr}.vsmid span{transform:rotate(90deg)}}
 
-/* ---------- módulos: player com abas ---------- */
+/* ---------- serviços: player com abas ---------- */
 .player{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
 .tabsbar{display:flex;gap:4px;padding:10px;background:var(--surface);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
 .tabsbar button{flex-shrink:0;display:inline-flex;gap:8px;align-items:baseline;font:600 13.5px/1 var(--fb);color:var(--ink-2);background:none;border:1.5px solid transparent;border-radius:999px;padding:10px 15px;cursor:pointer;white-space:nowrap;transition:all .15s}
@@ -313,7 +328,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     <a class="brand" href="#topo" aria-label="Prognum — início"><img src="img/prognum-color.png" alt="Prognum" width="113" height="26"></a>
     <ul>
       <li><a href="#plataforma">A plataforma</a></li>
-      <li><a href="#modulos">Módulos</a></li>
+      <li><a href="#modulos">Serviços</a></li>
       <li><a href="#resultados">Resultados</a></li>
       <li><a href="#mercado">Mercado</a></li>
     </ul>
@@ -329,7 +344,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <p class="lead">Certidões, avaliação do imóvel, certificado e assinatura digital, ITBI e registro em cartório — serviços que hoje vivem em portais separados, integrados em um só fluxo. Com status em tempo real para o time e autosserviço para o cliente final.</p>
       <div class="ctas">
         <a class="btn primary" href="#contato">Agendar demonstração</a>
-        <a class="btn ghost" href="#modulos">Conhecer os módulos</a>
+        <a class="btn ghost" href="#modulos">Conhecer os serviços</a>
       </div>
       <p class="reg"><b>Lei 14.382/2022:</b><span>registro do contrato em até 5 dias úteis. A esteira manual não acompanha.</span></p>
     </div>
@@ -347,7 +362,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
           <div class="sline"><span>Certidões · assinatura · ITBI · registro</span><b class="st wait">na fila</b></div>
         </div>
       </div>
-      <div class="chip"><b>9 módulos</b><span>acionados automaticamente, do pedido à conclusão</span></div>
+      <div class="chip"><b>9 serviços</b><span>acionados automaticamente, do pedido à conclusão</span></div>
     </div>
   </div>
 </header>
@@ -364,6 +379,20 @@ footer a:hover{color:var(--blue);text-decoration:underline}
 
 <section class="proof pad" aria-labelledby="t-prova">
   <div class="wrap">
+    <div class="userow rv">
+      <div class="lede">
+        <p class="eyebrow">Em operação</p>
+        <p>Instituições que já rodam sua jornada de crédito com a Esteira Digital SCCI:</p>
+      </div>
+      <div class="usegrid" role="list" aria-label="Instituições que já operam com a Esteira Digital">
+        <div class="lt" role="listitem"><img src="img/l/priv_01.webp" alt="Inter" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/priv_05.webp" alt="BRB" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/priv_17.webp" alt="C6 Bank" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/priv_19.webp" alt="Poupex" loading="lazy"></div>
+        <div class="lt txt" role="listitem" aria-label="CDHU"><b>CDHU</b></div>
+      </div>
+      <p class="src" style="margin-top:12px">Tile da CDHU em texto: <span class="flag">Pendente — logo oficial da CDHU</span></p>
+    </div>
     <div class="top">
       <div class="stat rv">
         <p class="eyebrow" id="t-prova">Quem confia na Prognum</p>
@@ -373,11 +402,9 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       </div>
       <div>
         <div class="lgrid rv" role="list" aria-label="Clientes Prognum">
-          <div class="lt" role="listitem"><img src="img/l/priv_01.webp" alt="Inter" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_02.webp" alt="Itaú" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_03.webp" alt="Banco Bari" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_04.webp" alt="Banco BMG" loading="lazy"></div>
-          <div class="lt" role="listitem"><img src="img/l/priv_05.webp" alt="BRB" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_06.webp" alt="Oliveira Trust" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_btg.webp" alt="Banco BTG Pactual" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_08.webp" alt="BR Partners" loading="lazy"></div>
@@ -389,12 +416,10 @@ footer a:hover{color:var(--blue);text-decoration:underline}
           <div class="lt" role="listitem"><img src="img/l/priv_14.webp" alt="Sicredi" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_15.webp" alt="Unicred" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_16.webp" alt="Banpará" loading="lazy"></div>
-          <div class="lt" role="listitem"><img src="img/l/priv_17.webp" alt="C6 Bank" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_18.webp" alt="CashMe" loading="lazy"></div>
-          <div class="lt" role="listitem"><img src="img/l/priv_19.webp" alt="Poupex" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_20.webp" alt="Banese" loading="lazy"></div>
         </div>
-        <p class="src">Exibição de marcas de clientes no site: <span class="flag">Validar · Marcelo — autorização de citação</span></p>
+        
       </div>
     </div>
     <div class="pubrow rv">
@@ -456,12 +481,12 @@ footer a:hover{color:var(--blue);text-decoration:underline}
 <section class="pad" id="modulos" aria-labelledby="t-modulos">
   <div class="wrap">
     <div class="head rv">
-      <p class="eyebrow">Módulos em ação</p>
-      <h2 id="t-modulos">9 módulos, uma única jornada, do início ao fim</h2>
+      <p class="eyebrow">Serviços em ação</p>
+      <h2 id="t-modulos">9 serviços, uma única jornada, do início ao fim</h2>
       <p>O cliente simula no Portal do Cliente e, a partir daí, cada etapa é acionada automaticamente, com status em tempo real para o time operacional. Navegue pelas etapas:</p>
     </div>
     <div class="player rv" data-player>
-      <div class="tabsbar" role="tablist" aria-label="Módulos da Esteira Digital">
+      <div class="tabsbar" role="tablist" aria-label="Serviços da Esteira Digital">
         <button role="tab" id="tab-portal" aria-controls="pn-portal" aria-selected="true"><span>01</span>Portal do Cliente</button>
         <button role="tab" id="tab-ocr" aria-controls="pn-ocr" aria-selected="false"><span>02</span>OCR</button>
         <button role="tab" id="tab-credito" aria-controls="pn-credito" aria-selected="false"><span>03</span>Análise de crédito</button>
@@ -632,7 +657,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
         <div>
           <p class="vend"><span class="code">ITBI</span><span class="with">com Certdox</span></p>
           <h3>ITBI Online</h3>
-          <p class="desc">O ITBI é o tributo municipal cobrado na transferência de imóveis — seu pagamento é essencial para usar o imóvel como garantia e seguir com o registro. O módulo automatiza o cálculo do valor venal pela prefeitura e emite a guia para pagamento.</p>
+          <p class="desc">O ITBI é o tributo municipal cobrado na transferência de imóveis — seu pagamento é essencial para usar o imóvel como garantia e seguir com o registro. O serviço automatiza o cálculo do valor venal pela prefeitura e emite a guia para pagamento.</p>
           <ul class="feats"><li><i>1</i>Solicitação com um clique</li><li><i>2</i>Exigências tratadas na plataforma</li><li><i>3</i>Guia disponível para pagamento</li></ul>
           <p class="kpiband"><b>1 clique</b><span>protocolo e data de notificação gerados na hora</span></p>
         </div>
@@ -682,6 +707,13 @@ footer a:hover{color:var(--blue);text-decoration:underline}
 
       <div class="endnote"><span class="d10" aria-hidden="true">10</span><p><b>Liberação do recurso:</b> fim da jornada — operação formalizada, garantia registrada e recurso liberado ao cliente.</p></div>
     </div>
+    <div class="credband rv">
+      <h3>Nascida no crédito imobiliário, a jornada mais exigente. <em>Pronta para qualquer produto de crédito.</em></h3>
+      <div class="cols">
+        <div class="cg"><small>Para toda operação de crédito</small><p>Portal do Cliente · Análise de crédito · OCR de documentos · Certificado e assinatura digital</p></div>
+        <div class="cg"><small>Quando há imóvel na garantia</small><p>Avaliação do imóvel · Certidões · ITBI · Registro de imóveis</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -690,7 +722,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     <div class="head rv">
       <p class="eyebrow">Resultados</p>
       <h2 id="t-result">Menos etapas manuais, mais velocidade até o registro</h2>
-      <p>Os números abaixo vêm dos próprios módulos da Esteira Digital.</p>
+      <p>Os números abaixo vêm dos próprios serviços da Esteira Digital.</p>
     </div>
     <div class="heroes rv">
       <div class="hero2"><b>~10 dias</b><span>em média, de ponta a ponta, até ter o crédito em mãos: <strong>até 80% mais rápido</strong></span><small>Agilidade ponta a ponta</small></div>
@@ -751,8 +783,8 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <h2 id="t-cta" style="color:#fff">Vamos mapear o próximo passo da sua operação</h2>
     </div>
     <div class="steps rv">
-      <div class="step"><b>01</b><h3>Diagnóstico</h3><p>Mapeamento da operação atual e dos gargalos por módulo</p></div>
-      <div class="step"><b>02</b><h3>Piloto</h3><p>Ativação dos módulos prioritários com acompanhamento próximo</p></div>
+      <div class="step"><b>01</b><h3>Diagnóstico</h3><p>Mapeamento da operação atual e dos gargalos por serviço</p></div>
+      <div class="step"><b>02</b><h3>Piloto</h3><p>Ativação dos serviços prioritários com acompanhamento próximo</p></div>
       <div class="step"><b>03</b><h3>Expansão</h3><p>Rollout do portfólio completo da Esteira Digital</p></div>
     </div>
     <div class="formgrid">
@@ -813,7 +845,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   }
 
-  /* player de módulos */
+  /* player de serviços */
   var bar = document.querySelector('.tabsbar');
   var tabs = bar ? Array.prototype.slice.call(bar.querySelectorAll('[role="tab"]')) : [];
   function openTab(tab, focus){
@@ -834,7 +866,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     });
   });
 
-  /* cards de resultado abrem o módulo correspondente */
+  /* cards de resultado abrem o serviço correspondente */
   document.querySelectorAll('[data-open]').forEach(function(btn){
     btn.addEventListener('click', function(){
       var tab = document.getElementById('tab-'+btn.getAttribute('data-open'));
