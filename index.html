@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Esteira Digital SCCI — Prognum</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Da simulação à liberação das garantias: a Esteira Digital SCCI integra certidões, avaliação do imóvel, certificado digital, ITBI e registro de imóveis em uma única plataforma de crédito imobiliário. Agende uma demonstração.">
+<meta property="og:title" content="Esteira Digital SCCI — Prognum">
+<meta property="og:description" content="Certidões, avaliação do imóvel, certificado digital, ITBI e registro de imóveis em um único fluxo, com status em tempo real. Conheça a Esteira Digital SCCI.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: branco editorial Prognum — wrap 1140px, cards em --surface, visuais ilustrativos no lugar de screenshots, uma faixa azul profunda no CTA final */
+:root{
+  color-scheme:light;
+  --bg:#ffffff; --surface:#f8f9fa;
+  --ink:#202124; --ink-2:#5f6368; --ink-3:#9aa0a6;
+  --blue:#1a3c8f; --blue-deep:#122c6b; --blue-light:#e8edf8;
+  --orange:#f9ab00; --orange-light:#fef3d6; --orange-ink:#8a6100;
+  --green:#1e8e5a; --green-light:#e4f3ec; --red:#c8474b;
+  --line:#e0e0e0;
+  --fd:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --fb:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1140px; --gut:clamp(16px,4vw,40px); --r:16px;
+  --shadow:0 14px 40px -24px rgba(26,60,143,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--fd);font-weight:400;margin:0;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+em{font-style:italic}
+.eyebrow{font:600 11.5px/1 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0}
+.num{font-variant-numeric:tabular-nums}
+.src{font-size:12px;color:var(--ink-3);font-style:italic;margin-top:16px}
+section{position:relative}
+.pad{padding-block:clamp(56px,7.5vw,96px)}
+.alt{background:var(--surface)}
+.head{display:grid;gap:14px;max-width:780px;margin-bottom:clamp(28px,4vw,46px)}
+.head h2{font-size:clamp(30px,4.2vw,46px)}
+.head p{font-size:17.5px;color:var(--ink-2);max-width:66ch}
+
+/* flag de validação — remover antes de publicar */
+.flag{display:inline-block;vertical-align:middle;font:700 10.5px/1.5 var(--fb);letter-spacing:.07em;text-transform:uppercase;color:var(--orange-ink);background:var(--orange-light);border:1px dashed var(--orange);padding:4px 10px;border-radius:12px;max-width:100%}
+.flag::before{content:"⚠ ";font-size:11px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.nav .brand{flex-shrink:0;display:flex;align-items:center}
+.nav .brand img{height:26px;width:auto}
+.nav ul{list-style:none;display:flex;gap:4px;margin:0 0 0 auto;padding:0}
+.nav ul a{display:block;text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:500;padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav ul a:hover{color:var(--blue);background:var(--blue-light)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--fb);text-decoration:none;border-radius:999px;padding:13px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s,color .2s}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep);box-shadow:var(--shadow);transform:translateY(-1px)}
+.btn.ghost{border-color:var(--line);color:var(--blue);background:#fff}
+.btn.ghost:hover{border-color:var(--blue);background:var(--blue-light)}
+.btn.sun{background:var(--orange);color:#3b2a06}
+.btn.sun:hover{filter:brightness(1.05);box-shadow:0 14px 40px -20px rgba(249,171,0,.55);transform:translateY(-1px)}
+.nav .btn{padding:10px 18px;font-size:14px}
+@media (max-width:900px){.nav ul{display:none}}
+
+/* ---------- vocabulário dos visuais ilustrativos ---------- */
+.win{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.chrome{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--surface)}
+.chrome i{width:9px;height:9px;border-radius:50%;background:#d7dce6}
+.chrome u{flex:1;height:8px;border-radius:4px;background:#eef1f6;margin-left:8px;text-decoration:none}
+.schem{padding:18px 20px;display:grid;gap:10px;font-size:13.5px}
+.schem .ttl{font:700 12px/1.3 var(--fb);letter-spacing:.04em;color:var(--ink);display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.schem .ttl small{font:500 11px/1.3 var(--fb);color:var(--ink-3);letter-spacing:.02em}
+.sline{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:0}
+.sline span{color:var(--ink);font-weight:500;min-width:0;overflow-wrap:anywhere}
+.st{flex-shrink:0;font:600 10.5px/1 var(--fb);letter-spacing:.04em;border-radius:999px;padding:5px 9px;white-space:nowrap}
+.st.ok{background:var(--green-light);color:var(--green)}
+.st.run{background:var(--orange-light);color:var(--orange-ink)}
+.st.wait{background:#eef1f6;color:var(--ink-3)}
+.prog{height:8px;border-radius:4px;background:var(--blue-light);overflow:hidden}
+.prog i{display:block;height:100%;width:62%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+.minirow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:0}
+.mini small{display:block;font:600 9.5px/1 var(--fb);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.mini b{font:600 13.5px/1.2 var(--fb);color:var(--ink);overflow-wrap:anywhere}
+.mini.hl b{color:var(--blue)}
+.docmini{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:6px}
+.docmini i{display:block;height:7px;border-radius:4px;background:#dde3ee}
+.docmini i:nth-child(2){width:78%}.docmini i:nth-child(3){width:90%}.docmini i:nth-child(4){width:64%}.docmini i:nth-child(5){width:84%}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.flow .arr{color:var(--orange);font-size:20px;text-align:center}
+.timexp{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.timexp .t1{font:600 13px/1 var(--fb);color:var(--ink-3);text-decoration:line-through}
+.timexp .t2{font-family:var(--fd);font-size:26px;color:var(--green)}
+.timexp small{color:var(--ink-2);font-size:12.5px}
+.tline{display:grid;gap:0}
+.tl{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding-block:7px;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--blue-light)}
+.tl:first-child::before{top:50%}.tl:last-child::before{bottom:50%}
+.tl i{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--blue);z-index:1}
+.tl.done i{background:var(--blue)}
+.tl.hot i{border-color:var(--orange);background:var(--orange)}
+.tl span{font-weight:500;color:var(--ink);min-width:0}
+.tl small{font:600 11px/1 var(--fb);color:var(--ink-3);white-space:nowrap}
+.gauge{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.gauge svg{display:block}
+.gauge p{font-size:12.5px;color:var(--ink-2)}
+.gauge b{color:var(--ink)}
+.illus-note{font-size:11.5px;color:var(--ink-3);font-style:italic;margin-top:10px}
+
+/* ---------- hero ---------- */
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(48px,6.5vw,88px) clamp(38px,5vw,60px)}
+.hero h1{font-size:clamp(38px,5.4vw,64px)}
+.hero h1 em{color:var(--blue)}
+.hero .lead{margin-top:20px;font-size:clamp(16.5px,1.6vw,19px);color:var(--ink-2);max-width:56ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .reg{display:inline-flex;gap:10px;align-items:baseline;margin-top:26px;font-size:13.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+.hero .reg b{color:var(--blue);font-weight:700;white-space:nowrap}
+.shotcard{position:relative;min-width:0}
+.wl{font:600 10.5px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:8px}
+.shotcard .chip{position:absolute;right:10px;bottom:-16px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);max-width:250px}
+.shotcard .chip b{display:block;font-family:var(--fd);font-size:24px;color:var(--blue);line-height:1}
+.shotcard .chip span{font-size:12.5px;color:var(--ink-2)}
+.hero .schem{padding-bottom:40px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.shotcard .chip{position:static;margin-top:14px;max-width:none}.hero .schem{padding-bottom:18px}.hero .reg{align-items:flex-start;border-radius:14px}}
+
+/* kpis institucionais */
+.kpis{border-block:1px solid var(--line)}
+.kpis .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:18px;align-items:center;padding-block:26px}
+.kpi b{display:block;font-family:var(--fd);font-size:clamp(30px,3.4vw,42px);color:var(--blue);line-height:1;letter-spacing:-.01em}
+.kpi span{display:block;margin-top:6px;font-size:13px;color:var(--ink-2)}
+.kpis .note{font-size:11.5px;color:var(--ink-3);font-style:italic;max-width:200px}
+@media (max-width:900px){.kpis .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis .note{grid-column:1/-1;max-width:none}}
+
+/* ---------- quem confia ---------- */
+.proof .top{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.proof .stat b{display:block;font-family:var(--fd);font-size:clamp(52px,6vw,76px);color:var(--blue);line-height:.95;letter-spacing:-.02em}
+.proof .stat p{margin-top:10px;max-width:34ch;font-size:15.5px;color:var(--ink-2)}
+.proof .stat small{display:block;margin-top:10px;font-size:11.5px;color:var(--ink-3);font-style:italic}
+.lgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.lt{background:#fff;border:1px solid var(--line);border-radius:12px;aspect-ratio:1.9;display:grid;place-items:center;padding:12% 14%;min-width:0;overflow:hidden}
+.lt img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain}
+.pubrow{margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
+.pubrow .lede{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-bottom:16px}
+.pubrow h3{font-size:clamp(20px,2.4vw,26px)}
+.pubgrid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
+.pubgrid .lt{aspect-ratio:1.7;padding:7%}
+@media (max-width:900px){.proof .top{grid-template-columns:1fr}.lgrid{grid-template-columns:repeat(4,minmax(0,1fr))}.pubgrid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.lgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.pubgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* ---------- problema/solução ---------- */
+.ps{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
+.psc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 22px}
+.psc.yes{border-color:var(--blue-light);background:linear-gradient(180deg,#fff, var(--blue-light) 240%);box-shadow:var(--shadow)}
+.psc .eyebrow{margin-bottom:16px}
+.psc.no .eyebrow{color:var(--ink-3)}
+.psr{display:grid;grid-template-columns:auto 1fr;gap:12px;padding-block:12px;border-top:1px solid var(--line)}
+.psr:first-of-type{border-top:0}
+.psr .ic{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--ink-3);font-size:16px;flex-shrink:0}
+.psc.yes .psr .ic{background:var(--orange-light);color:var(--orange-ink)}
+.psr b{display:block;font-size:15.5px}
+.psr p{font-size:14px;color:var(--ink-2);margin-top:2px}
+.vsmid{display:grid;place-items:center}
+.vsmid span{width:46px;height:46px;border-radius:50%;background:var(--orange);color:#3b2a06;display:grid;place-items:center;font-size:20px;box-shadow:0 10px 26px -12px rgba(249,171,0,.6)}
+@media (max-width:900px){.ps{grid-template-columns:1fr}.vsmid span{transform:rotate(90deg)}}
+
+/* ---------- módulos: player com abas ---------- */
+.player{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.tabsbar{display:flex;gap:4px;padding:10px;background:var(--surface);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}
+.tabsbar button{flex-shrink:0;display:inline-flex;gap:8px;align-items:baseline;font:600 13.5px/1 var(--fb);color:var(--ink-2);background:none;border:1.5px solid transparent;border-radius:999px;padding:10px 15px;cursor:pointer;white-space:nowrap;transition:all .15s}
+.tabsbar button span{font:700 10.5px/1 var(--fb);color:var(--ink-3)}
+.tabsbar button:hover{background:#fff;border-color:var(--line)}
+.tabsbar button[aria-selected="true"]{background:var(--blue);color:#fff}
+.tabsbar button[aria-selected="true"] span{color:var(--orange)}
+.panel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.5vw,44px);align-items:start;padding:clamp(22px,3.5vw,38px)}
+.panel[hidden]{display:none}
+.vend{display:inline-flex;align-items:center;gap:10px;margin-bottom:12px}
+.vend .code{font:700 11px/1 var(--fb);letter-spacing:.06em;color:var(--blue);background:var(--blue-light);border-radius:8px;padding:7px 9px}
+.vend .with{font:600 11px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.panel h3{font-size:clamp(23px,2.5vw,30px)}
+.panel .desc{margin-top:10px;color:var(--ink-2);font-size:15px;max-width:58ch}
+.feats{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:7px}
+.feats li{display:flex;gap:10px;align-items:baseline;font-size:14px}
+.feats i{font-style:normal;font:700 10.5px/1 var(--fb);color:var(--blue);background:var(--blue-light);border-radius:999px;padding:4px 8px;flex-shrink:0}
+.kpiband{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:13px 16px}
+.kpiband b{font-family:var(--fd);font-size:23px;color:var(--blue);white-space:nowrap}
+.kpiband span{font-size:13px;color:var(--ink-2)}
+.panel .visual{min-width:0}
+.endnote{display:flex;gap:12px;align-items:center;padding:16px clamp(22px,3.5vw,38px);border-top:1px solid var(--line);background:var(--surface);font-size:14px;color:var(--ink-2)}
+.endnote .d10{flex-shrink:0;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:var(--orange);font:700 12px/1 var(--fb)}
+.endnote b{color:var(--ink)}
+@media (max-width:900px){.panel{grid-template-columns:1fr}}
+
+/* ---------- resultados ---------- */
+.heroes{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.hero2{border-radius:var(--r);padding:28px 30px;background:var(--blue);color:#fff;display:flex;flex-direction:column;gap:10px}
+.hero2 b{font-family:var(--fd);font-size:clamp(34px,4vw,52px);line-height:1;color:var(--orange);letter-spacing:-.01em}
+.hero2.sec{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.hero2.sec b{color:var(--blue);font-size:clamp(26px,3vw,36px)}
+.hero2 span{font-size:15px;line-height:1.5}
+.hero2 span strong{font-weight:700}
+.hero2 small{font:600 11px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-top:auto}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.metric{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;text-align:left;font:inherit;cursor:pointer;transition:border-color .2s,transform .15s,box-shadow .2s}
+.metric:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+.metric b{font-family:var(--fd);font-size:34px;color:var(--blue);line-height:1;font-weight:400}
+.metric span{font-size:14px;color:var(--ink-2)}
+.metric small{font:600 10.5px/1 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:auto}
+@media (max-width:900px){.heroes,.metrics{grid-template-columns:1fr}}
+
+/* ---------- por que ---------- */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.why > div{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.why h3{font-size:24px;margin-top:4px}
+.why p{margin-top:10px;font-size:14.5px;color:var(--ink-2)}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+
+/* ---------- mercado compacto ---------- */
+.datebadge{display:inline-flex;align-items:center;gap:8px;font:600 12px/1 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border-radius:999px;padding:8px 14px;margin-bottom:16px;max-width:100%}
+.mstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ms{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:flex;flex-direction:column;gap:6px}
+.ms b{font-family:var(--fd);font-size:clamp(30px,3.4vw,40px);color:var(--blue);line-height:1}
+.ms b.green{color:var(--green)}
+.ms span{font:600 12px/1.3 var(--fb);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.ms p{font-size:13.5px;color:var(--ink-2)}
+.reg3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.regc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:6px}
+.regc b{font-family:var(--fd);font-size:38px;color:var(--blue);line-height:1.05;margin-top:6px}
+.regc .cap{font:500 12px/1.3 var(--fb);color:var(--ink-3);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.regc p{color:var(--ink-2);font-size:14px}
+.statement{margin-top:18px;display:flex;gap:16px;align-items:center;padding:24px 28px;border-radius:var(--r);background:var(--blue);color:#fff;font-family:var(--fd);font-size:clamp(19px,2.2vw,25px);line-height:1.3}
+.statement em{color:var(--orange)}
+.statement i{font-style:normal;flex-shrink:0;color:var(--orange);font-size:24px}
+@media (max-width:900px){.mstats{grid-template-columns:1fr}.reg3{grid-template-columns:1fr}}
+
+/* ---------- cta final ---------- */
+.next{background:var(--blue-deep);color:#fff;overflow:hidden}
+.next .photo{position:absolute;inset:0;background:url(img/hero.jpg) center/cover no-repeat;opacity:.38;mask-image:linear-gradient(180deg,transparent,#000 45%);-webkit-mask-image:linear-gradient(180deg,transparent,#000 45%)}
+.next .wrap{position:relative}
+.next .eyebrow{color:var(--orange)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:44px}
+.step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:22px}
+.step b{font:700 12px/1 var(--fb);letter-spacing:.1em;color:var(--orange)}
+.step h3{font-size:23px;margin-top:10px;color:#fff}
+.step p{margin-top:8px;font-size:14px;color:#cfd9f0}
+.formgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:start}
+.form{background:#fff;color:var(--ink);border-radius:var(--r);padding:clamp(22px,3vw,34px);box-shadow:0 30px 80px -40px rgba(0,0,0,.5)}
+.form h3{font-size:26px}
+.form .sub{margin-top:8px;font-size:14px;color:var(--ink-2)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.field{display:grid;gap:6px;min-width:0;margin:0}
+.field.full{grid-column:1/-1}
+.field label{font:600 12.5px/1 var(--fb);color:var(--ink-2)}
+.field input,.field textarea{font:400 15px/1.4 var(--fb);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+.field input:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:0;background:#fff}
+.field textarea{resize:vertical;min-height:88px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:500 13px/1 var(--fb);color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer;transition:all .15s}
+.chips button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.form .send{margin-top:20px;width:100%;justify-content:center}
+.form .fnote{margin-top:12px;font-size:12px;color:var(--ink-3);text-align:center}
+.alt-contact{display:grid;gap:14px}
+.alt-contact h3{font-size:24px;color:#fff}
+.alt-contact p{font-size:14.5px;color:#cfd9f0;max-width:44ch}
+.ci{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:15px}
+.ci i{font-style:normal;color:var(--orange)}
+.ci span{word-break:break-all}
+.ci button{margin-left:auto;font:600 12px/1 var(--fb);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;cursor:pointer;flex-shrink:0}
+.ci button:hover{background:rgba(255,255,255,.22)}
+@media (max-width:980px){.formgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding-block:34px;background:#fff}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;font-size:13px;color:var(--ink-2)}
+footer img{height:22px;width:auto}
+footer .addr{max-width:46ch}
+footer nav{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+footer a{color:var(--ink-2);text-decoration:none}
+footer a:hover{color:var(--blue);text-decoration:underline}
+
+/* reveal sutil — estado de repouso sempre visível; a animação só roda ao entrar na tela */
+@media (prefers-reduced-motion:no-preference){
+  .rv.in{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+  NOTA PARA O WEBMASTER (remover em produção)
+  1) Esta página substitui o conteúdo de /esteira-digital-2/ — publicar
+     como página de template em branco (sem header/footer do tema).
+  2) A pasta img/ acompanha o arquivo (caminhos relativos img/...).
+  3) FORMULÁRIO: hoje o envio abre um e-mail pré-preenchido para o
+     comercial (fallback). Apontar o <form id="lead-form"> para o mesmo
+     destino do formulário atual do site (plugin WP / CRM) e remover o
+     fallback de mailto no script.
+  4) Elementos com a classe .flag são pendências de validação interna
+     (Marcelo) e devem ser REMOVIDOS antes de ir ao ar.
+============================================================= -->
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Prognum — início"><img src="img/prognum-color.png" alt="Prognum" width="113" height="26"></a>
+    <ul>
+      <li><a href="#plataforma">A plataforma</a></li>
+      <li><a href="#modulos">Módulos</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#mercado">Mercado</a></li>
+    </ul>
+    <a class="btn primary" href="#contato">Agendar demonstração</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Esteira Digital SCCI</p>
+      <h1>Da simulação à liberação das garantias, <em>em uma única plataforma.</em></h1>
+      <p class="lead">Certidões, avaliação do imóvel, certificado e assinatura digital, ITBI e registro em cartório — serviços que hoje vivem em portais separados, integrados em um só fluxo. Com status em tempo real para o time e autosserviço para o cliente final.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#contato">Agendar demonstração</a>
+        <a class="btn ghost" href="#modulos">Conhecer os módulos</a>
+      </div>
+      <p class="reg"><b>Lei 14.382/2022:</b><span>registro do contrato em até 5 dias úteis. A esteira manual não acompanha.</span></p>
+    </div>
+    <div class="shotcard">
+      <span class="wl">Uma proposta, todas as etapas, um só status</span>
+      <div class="win" role="img" aria-label="Ilustração da esteira: etapas da proposta com status em tempo real, da simulação ao registro">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+        <div class="schem" aria-hidden="true">
+          <p class="ttl">Proposta · financiamento imobiliário <small>em andamento</small></p>
+          <div class="prog"><i></i></div>
+          <div class="sline"><span>Simulação e proposta</span><b class="st ok">concluída</b></div>
+          <div class="sline"><span>Documentos lidos por OCR</span><b class="st ok">concluída</b></div>
+          <div class="sline"><span>Análise de crédito</span><b class="st ok">aprovada</b></div>
+          <div class="sline"><span>Avaliação do imóvel (AVM)</span><b class="st run">em andamento</b></div>
+          <div class="sline"><span>Certidões · assinatura · ITBI · registro</span><b class="st wait">na fila</b></div>
+        </div>
+      </div>
+      <div class="chip"><b>9 módulos</b><span>acionados automaticamente, do pedido à conclusão</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="kpis">
+  <div class="wrap">
+    <div class="kpi"><b class="num">+72</b><span>instituições financeiras atendidas</span></div>
+    <div class="kpi"><b class="num">+10K</b><span>usuários ativos na plataforma</span></div>
+    <div class="kpi"><b class="num">+8 mi</b><span>operações processadas no sistema</span></div>
+    <div class="kpi"><b class="num">1990</b><span>primeira solução digital do setor</span></div>
+    <p class="note">Números institucionais da base corporativa Prognum. <span class="flag">Validar · Marcelo — unificar com a home</span></p>
+  </div>
+</div>
+
+<section class="proof pad" aria-labelledby="t-prova">
+  <div class="wrap">
+    <div class="top">
+      <div class="stat rv">
+        <p class="eyebrow" id="t-prova">Quem confia na Prognum</p>
+        <b class="num" style="margin-top:12px">66% a.a.</b>
+        <p>Nos últimos 2 anos, clientes Prognum* cresceram suas carteiras de crédito imobiliário em cerca de 66% a.a. — 5x mais que a média do mercado.</p>
+        <small>*Instituições financeiras · Fonte: Banco Central do Brasil</small>
+      </div>
+      <div>
+        <div class="lgrid rv" role="list" aria-label="Clientes Prognum">
+          <div class="lt" role="listitem"><img src="img/l/priv_01.webp" alt="Inter" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_02.webp" alt="Itaú" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_03.webp" alt="Banco Bari" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_04.webp" alt="Banco BMG" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_05.webp" alt="BRB" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_06.webp" alt="Oliveira Trust" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_btg.webp" alt="Banco BTG Pactual" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_08.webp" alt="BR Partners" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_09.webp" alt="Banco Daycoval" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_10.webp" alt="Rodobens" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_11.webp" alt="Sicoob" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_12.webp" alt="Ailos" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_13.webp" alt="Banco Semear" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_14.webp" alt="Sicredi" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_15.webp" alt="Unicred" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_16.webp" alt="Banpará" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_17.webp" alt="C6 Bank" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_18.webp" alt="CashMe" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_19.webp" alt="Poupex" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/priv_20.webp" alt="Banese" loading="lazy"></div>
+        </div>
+        <p class="src">Exibição de marcas de clientes no site: <span class="flag">Validar · Marcelo — autorização de citação</span></p>
+      </div>
+    </div>
+    <div class="pubrow rv">
+      <div class="lede">
+        <p class="eyebrow">Setor público</p>
+        <h3>O sistema mais utilizado também no setor público</h3>
+      </div>
+      <div class="pubgrid" role="list" aria-label="Instituições públicas atendidas">
+        <div class="lt" role="listitem"><img src="img/l/pubn_01.webp" alt="CFIAe" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_02.webp" alt="Banese" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_03.webp" alt="BRB" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_04.webp" alt="Banpará" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_05.webp" alt="Cohapar" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_06.webp" alt="Cohab Bauru" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_07.webp" alt="CCCPM" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_08.webp" alt="Cohab Pará" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_09.webp" alt="Cohab/SC" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_10.webp" alt="Governo do Espírito Santo" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_11.webp" alt="Cohab Curitiba" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_12.webp" alt="Cohab Santista" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_13.webp" alt="Governo de Sergipe" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_14.webp" alt="Cohab-VR" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_15.webp" alt="Cohab Bandeirante" loading="lazy"></div>
+        <div class="lt" role="listitem"><img src="img/l/pubn_16.webp" alt="Governo do Acre" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt pad" id="plataforma" aria-labelledby="t-plat">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Do problema à solução</p>
+      <h2 id="t-plat">Cada etapa em um fornecedor. Agora, em um único fluxo.</h2>
+      <p>Certidões, certificado digital, assinatura, avaliação do imóvel, ITBI e registro vivem em portais externos, coordenados manualmente. A Esteira Digital integra esses serviços para fintechs, bancos e cooperativas em um só ambiente, do pedido à conclusão.</p>
+    </div>
+    <div class="ps rv">
+      <div class="psc no">
+        <p class="eyebrow">Hoje</p>
+        <div class="psr"><span class="ic" aria-hidden="true">▦</span><div><b>Múltiplos portais externos</b><p>Cartório (ONR), certidões, certificadoras e birôs de crédito, cada um com seu acesso.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">◷</span><div><b>Prazo regulatório apertado</b><p>A Lei 14.382 exige 5 dias úteis para registro. O acompanhamento manual não sustenta esse SLA.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">◌</span><div><b>Sem visão única de status</b><p>O time consulta cada fornecedor para saber em que pé está a proposta.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">△</span><div><b>Risco de erro e fraude</b><p>Digitação manual de participantes e documentos aumenta a chance de erro e de fraude documental.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">✉</span><div><b>Cliente sem autosserviço</b><p>Sem portal próprio, depende de telefone e e-mail para simular e enviar documentos.</p></div></div>
+      </div>
+      <div class="vsmid" aria-hidden="true"><span>→</span></div>
+      <div class="psc yes">
+        <p class="eyebrow">Com a Esteira Digital</p>
+        <div class="psr"><span class="ic" aria-hidden="true">⌂</span><div><b>One stop shop</b><p>Múltiplos fornecedores integrados em um único ambiente.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">⚡</span><div><b>Agilidade</b><p>Menor tempo de contratação, com status automático de cada etapa.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">◔</span><div><b>On demand</b><p>Pague apenas pelo que usar, sem custo de setup.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">✓</span><div><b>Comodidade</b><p>O cliente final não precisa sair de casa para concluir a operação.</p></div></div>
+        <div class="psr"><span class="ic" aria-hidden="true">◈</span><div><b>Mais segurança</b><p>Análise de risco impactando diretamente fraudes e inadimplência.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="modulos" aria-labelledby="t-modulos">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Módulos em ação</p>
+      <h2 id="t-modulos">9 módulos, uma única jornada, do início ao fim</h2>
+      <p>O cliente simula no Portal do Cliente e, a partir daí, cada etapa é acionada automaticamente, com status em tempo real para o time operacional. Navegue pelas etapas:</p>
+    </div>
+    <div class="player rv" data-player>
+      <div class="tabsbar" role="tablist" aria-label="Módulos da Esteira Digital">
+        <button role="tab" id="tab-portal" aria-controls="pn-portal" aria-selected="true"><span>01</span>Portal do Cliente</button>
+        <button role="tab" id="tab-ocr" aria-controls="pn-ocr" aria-selected="false"><span>02</span>OCR</button>
+        <button role="tab" id="tab-credito" aria-controls="pn-credito" aria-selected="false"><span>03</span>Análise de crédito</button>
+        <button role="tab" id="tab-avaliacao" aria-controls="pn-avaliacao" aria-selected="false"><span>04</span>Avaliação do imóvel</button>
+        <button role="tab" id="tab-certidoes" aria-controls="pn-certidoes" aria-selected="false"><span>05</span>Certidões</button>
+        <button role="tab" id="tab-certificado" aria-controls="pn-certificado" aria-selected="false"><span>06–07</span>Certificado &amp; Assinatura</button>
+        <button role="tab" id="tab-itbi" aria-controls="pn-itbi" aria-selected="false"><span>08</span>ITBI</button>
+        <button role="tab" id="tab-registro" aria-controls="pn-registro" aria-selected="false"><span>09</span>Registro</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-portal" aria-labelledby="tab-portal">
+        <div>
+          <p class="vend"><span class="code">PC</span><span class="with">Prognum</span></p>
+          <h3>Portal do Cliente | Simulação</h3>
+          <p class="desc">Ambiente web responsivo em que o próprio cliente final realiza a simulação, envia a proposta e faz upload dos documentos — parametrizado para alimentar o SCCI automaticamente, sem digitação ou upload manual pelo time operacional.</p>
+          <ul class="feats"><li><i>1</i>Experiência intuitiva, em desktop e mobile</li><li><i>2</i>Ativação automática no SCCI</li><li><i>3</i>Regras configuráveis pela instituição</li></ul>
+          <p class="kpiband"><b>Autonomia e dados</b><span>o cliente acompanha a proposta por etapa, sem telefone nem e-mail</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: simulação feita pelo cliente no portal, enviada automaticamente ao SCCI">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Simule seu financiamento <small>Portal do Cliente</small></p>
+              <div class="minirow">
+                <div class="mini"><small>Valor do imóvel</small><b>R$ 800.000</b></div>
+                <div class="mini"><small>Entrada</small><b>R$ 240.000</b></div>
+                <div class="mini"><small>Prazo</small><b>360 meses</b></div>
+                <div class="mini hl"><small>Parcela estimada</small><b>R$ 4.9xx</b></div>
+              </div>
+              <div class="sline"><span>Documentos enviados pelo próprio cliente</span><b class="st ok">3 de 3</b></div>
+              <div class="sline"><span>Proposta ativada no SCCI</span><b class="st ok">automático</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-ocr" aria-labelledby="tab-ocr" hidden>
+        <div>
+          <p class="vend"><span class="code">OCR</span><span class="with">com Docket</span></p>
+          <h3>OCR de Documentos</h3>
+          <p class="desc">Leitura automática de documentos que hoje exigem digitação manual do time comercial — reduzindo erros e acelerando o cadastro. O sistema compara o dado cadastrado com a sugestão extraída pelo OCR.</p>
+          <ul class="feats"><li><i>1</i>Matrícula de imóvel</li><li><i>2</i>Documento de identificação</li><li><i>3</i>Comprovante de residência</li></ul>
+          <p class="kpiband"><b>7x mais rápido</b><span>a leitura cai de 11:13 para 01:31 — menos erro, menos retrabalho</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: documento lido pelo OCR com campos extraídos automaticamente, 7 vezes mais rápido que a digitação">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Leitura de matrícula <small>OCR</small></p>
+              <div class="flow">
+                <div class="docmini"><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="arr">→</span>
+                <div style="display:grid;gap:8px;min-width:0">
+                  <div class="mini"><small>Matrícula</small><b>nº 123.456 ✓</b></div>
+                  <div class="mini"><small>Proprietário</small><b>confere ✓</b></div>
+                  <div class="mini"><small>Área privativa</small><b>extraída ✓</b></div>
+                </div>
+              </div>
+              <p class="timexp"><span class="t1 num">11:13 digitando</span><span class="t2 num">01:31</span><small>com leitura automática</small></p>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-credito" aria-labelledby="tab-credito" hidden>
+        <div>
+          <p class="vend"><span class="code">%</span><span class="with">com Neurotech</span></p>
+          <h3>Análise de Crédito</h3>
+          <p class="desc">A instituição avalia a capacidade do cliente final de assumir e manter o crédito ao longo do prazo, reduzindo o risco de inadimplência. A análise considera dados cadastrais, renda, histórico financeiro e comportamento de pagamento.</p>
+          <ul class="feats"><li><i>1</i>Disparo automático</li><li><i>2</i>Consulta a bases externas</li><li><i>3</i>Roteamento por resultado</li><li><i>4</i>Notificação omnichannel</li></ul>
+          <p class="kpiband"><b>~12 horas</b><span>disparo automático após a validação dos documentos</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: análise de crédito disparada automaticamente, com consulta a bases externas e roteamento pelo resultado">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Análise de crédito <small>disparo automático</small></p>
+              <div class="gauge">
+                <svg width="74" height="44" viewBox="0 0 74 44" aria-hidden="true"><path d="M7 40 A32 32 0 0 1 67 40" fill="none" stroke="#e8edf8" stroke-width="9" stroke-linecap="round"/><path d="M7 40 A32 32 0 0 1 56 15" fill="none" stroke="#1a3c8f" stroke-width="9" stroke-linecap="round"/><circle cx="56" cy="15" r="5" fill="#f9ab00"/></svg>
+                <p><b>Capacidade de pagamento avaliada</b><br>renda · histórico · comprometimento</p>
+              </div>
+              <div class="sline"><span>Bases externas consultadas</span><b class="st ok">ok</b></div>
+              <div class="sline"><span>Proposta roteada pelo resultado</span><b class="st ok">aprovada</b></div>
+              <div class="sline"><span>Cliente notificado</span><b class="st run">e-mail · app · SMS</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-avaliacao" aria-labelledby="tab-avaliacao" hidden>
+        <div>
+          <p class="vend"><span class="code">AVM</span><span class="with">com Eemóvl</span></p>
+          <h3>Avaliação do Imóvel</h3>
+          <p class="desc">Um engenheiro qualificado — ou um modelo automatizado — produz um laudo técnico com valor de mercado, estado de conservação e características físicas do imóvel, identificando divergências que poderiam comprometer a garantia.</p>
+          <ul class="feats"><li><i>1</i>AVM — avaliação automatizada</li><li><i>2</i>AVR sem vistoria</li><li><i>3</i>AVR com vistoria</li></ul>
+          <p class="kpiband"><b>~5 minutos</b><span>para um laudo AVM totalmente automatizado</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: laudo de avaliação automatizada do imóvel gerado em cerca de cinco minutos">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Laudo AVM <small>gerado em ~5 min</small></p>
+              <div class="minirow">
+                <div class="mini hl"><small>Valor de mercado</small><b>R$ 812.000</b></div>
+                <div class="mini"><small>Conservação</small><b>Bom</b></div>
+                <div class="mini"><small>Área privativa</small><b>confere ✓</b></div>
+                <div class="mini"><small>Divergências</small><b>nenhuma</b></div>
+              </div>
+              <div class="sline"><span>Garantia apta para a operação</span><b class="st ok">validada</b></div>
+              <div class="sline"><span>Precisa de vistoria? AVR com engenheiro</span><b class="st wait">opcional</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-certidoes" aria-labelledby="tab-certidoes" hidden>
+        <div>
+          <p class="vend"><span class="code">PF/PJ</span><span class="with">com Certdox</span></p>
+          <h3>Emissão de Certidões</h3>
+          <p class="desc">Visão completa dos participantes e do imóvel envolvidos na operação — reduzindo a probabilidade de inadimplência e protegendo contra fraudes. Certidões de pessoa física, jurídica e do imóvel, direto na plataforma.</p>
+          <ul class="feats"><li><i>1</i>Emissão por lista ou por pasta</li><li><i>2</i>Emissão avulsa por participante</li><li><i>3</i>Pendências tratadas na própria tela</li></ul>
+          <p class="kpiband"><b>3 formas</b><span>por lista, por pasta ou avulsa por participante</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: certidões dos participantes e do imóvel emitidas e acompanhadas na própria plataforma">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Certidões da operação <small>emissão em lote</small></p>
+              <div class="sline"><span>Débitos federais · comprador</span><b class="st ok">emitida</b></div>
+              <div class="sline"><span>Ações trabalhistas · vendedor</span><b class="st ok">emitida</b></div>
+              <div class="sline"><span>Matrícula atualizada · imóvel</span><b class="st run">em emissão</b></div>
+              <div class="sline"><span>Exigência apontada</span><b class="st run">tratada na tela</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-certificado" aria-labelledby="tab-certificado" hidden>
+        <div>
+          <p class="vend"><span class="code">AC</span><span class="with">com Certdox</span></p>
+          <h3>Certificado &amp; Assinatura Digital</h3>
+          <p class="desc">Credencial emitida por uma Autoridade Certificadora que valida dados pessoais, documentação e biometria — fundamental para reduzir fraudes, já que só assina quem possui certificado ICP-Brasil dentro da validade.</p>
+          <ul class="feats"><li><i>1</i>Emissão por participante</li><li><i>2</i>Acompanhamento em tempo real</li><li><i>3</i>Ordem de assinatura configurável</li><li><i>4</i>Conversão para PDF-A</li></ul>
+          <p class="kpiband"><b>ICP-Brasil</b><span>validade jurídica plena, com biometria e documentação</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: emissão de certificado ICP-Brasil e assinatura dos participantes em ordem configurável">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Assinatura do contrato <small>ICP-Brasil</small></p>
+              <div class="sline"><span>Biometria + documentos validados</span><b class="st ok">certificado emitido</b></div>
+              <div class="sline"><span>1º · Comprador</span><b class="st ok">assinou</b></div>
+              <div class="sline"><span>2º · Vendedor</span><b class="st run">assinando</b></div>
+              <div class="sline"><span>3º · Instituição financeira</span><b class="st wait">na fila</b></div>
+              <div class="sline"><span>Contrato convertido para PDF-A</span><b class="st wait">automático</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-itbi" aria-labelledby="tab-itbi" hidden>
+        <div>
+          <p class="vend"><span class="code">ITBI</span><span class="with">com Certdox</span></p>
+          <h3>ITBI Online</h3>
+          <p class="desc">O ITBI é o tributo municipal cobrado na transferência de imóveis — seu pagamento é essencial para usar o imóvel como garantia e seguir com o registro. O módulo automatiza o cálculo do valor venal pela prefeitura e emite a guia para pagamento.</p>
+          <ul class="feats"><li><i>1</i>Solicitação com um clique</li><li><i>2</i>Exigências tratadas na plataforma</li><li><i>3</i>Guia disponível para pagamento</li></ul>
+          <p class="kpiband"><b>1 clique</b><span>protocolo e data de notificação gerados na hora</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: guia de ITBI solicitada com um clique, com protocolo gerado na hora">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Guia de ITBI <small>prefeitura integrada</small></p>
+              <div class="minirow">
+                <div class="mini"><small>Valor venal</small><b>calculado ✓</b></div>
+                <div class="mini hl"><small>Protocolo</small><b>gerado na hora</b></div>
+              </div>
+              <div class="sline"><span>Solicitação enviada à prefeitura</span><b class="st ok">1 clique</b></div>
+              <div class="sline"><span>Guia disponível para pagamento</span><b class="st run">emitida</b></div>
+              <div class="sline"><span>Exigência? Tratada na plataforma</span><b class="st wait">se houver</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="pn-registro" aria-labelledby="tab-registro" hidden>
+        <div>
+          <p class="vend"><span class="code">ONR</span><span class="with">com Certdox</span></p>
+          <h3>Registro de Imóveis</h3>
+          <p class="desc">Envio de documentos e contratos ao Cartório de Registro de Imóveis direto pela plataforma, sem acessar portais externos como o ONR. O time acompanha todos os status e datas — do envio do pedido ao registro final da matrícula.</p>
+          <ul class="feats"><li><i>1</i>Protocolo e prenotação visíveis</li><li><i>2</i>Pagamento e exigências integrados</li><li><i>3</i>Matrícula liberada automaticamente</li></ul>
+          <p class="kpiband"><b>5 dias úteis</b><span>prazo legal da Lei 14.382/2022 — protocolo e prenotação dentro do SCCI</span></p>
+        </div>
+        <div class="visual">
+          <div class="win" role="img" aria-label="Ilustração: linha do tempo do registro no cartório, do protocolo à matrícula registrada dentro do prazo legal">
+            <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><u></u></div>
+            <div class="schem" aria-hidden="true">
+              <p class="ttl">Registro do contrato <small>via ONR, dentro do SCCI</small></p>
+              <div class="tline">
+                <div class="tl done"><i></i><span>Contrato protocolado</span><small>DIA 0</small></div>
+                <div class="tl done"><i></i><span>Prenotação confirmada</span><small>DIA 1</small></div>
+                <div class="tl done"><i></i><span>Emolumentos pagos no sistema</span><small>DIA 2</small></div>
+                <div class="tl hot"><i></i><span>Matrícula registrada</span><small>DIA 4</small></div>
+              </div>
+              <div class="sline"><span>Prazo legal de 5 dias úteis</span><b class="st ok">cumprido</b></div>
+            </div>
+          </div>
+          <p class="illus-note">Representação ilustrativa do fluxo, com dados de exemplo.</p>
+        </div>
+      </div>
+
+      <div class="endnote"><span class="d10" aria-hidden="true">10</span><p><b>Liberação do recurso:</b> fim da jornada — operação formalizada, garantia registrada e recurso liberado ao cliente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt pad" id="resultados" aria-labelledby="t-result">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Resultados</p>
+      <h2 id="t-result">Menos etapas manuais, mais velocidade até o registro</h2>
+      <p>Os números abaixo vêm dos próprios módulos da Esteira Digital.</p>
+    </div>
+    <div class="heroes rv">
+      <div class="hero2"><b>~10 dias</b><span>em média, de ponta a ponta, até ter o crédito em mãos: <strong>até 80% mais rápido</strong></span><small>Agilidade ponta a ponta</small></div>
+      <div class="hero2 sec"><b>Mais segurança</b><span><strong>Menos fraude e retrabalho:</strong> dados lidos por OCR, certidões, análise de risco e assinatura ICP-Brasil rastreáveis na mesma esteira</span><small>Segurança no processo</small></div>
+    </div>
+    <div class="metrics rv">
+      <button class="metric" type="button" data-open="ocr"><b>7x</b><span>mais rápido na leitura de documentos, de 11:13 para 01:31</span><small>OCR de documentos →</small></button>
+      <button class="metric" type="button" data-open="avaliacao"><b>~5 min</b><span>para um laudo AVM totalmente automatizado</span><small>Avaliação do imóvel →</small></button>
+      <button class="metric" type="button" data-open="itbi"><b>1 clique</b><span>para solicitar o ITBI, com protocolo e data de notificação na hora</span><small>ITBI online →</small></button>
+    </div>
+  </div>
+</section>
+
+<section class="pad" aria-labelledby="t-porque">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Por que Prognum</p>
+      <h2 id="t-porque">Especialista, com a melhor tecnologia, em escala</h2>
+    </div>
+    <div class="why rv">
+      <div><p class="eyebrow">Especialista</p><h3>Desde 1990</h3><p>Pioneira em sistemas para crédito imobiliário, com mais de três décadas de domínio do setor — e certificação ISO 9001 e Certics.</p></div>
+      <div><p class="eyebrow">Melhor tecnologia</p><h3>APIs e nuvem</h3><p>Arquitetura moderna baseada em APIs, com Docker e operação em nuvem (SaaS) — e parceiros integrados em cada etapa.</p></div>
+      <div><p class="eyebrow">Escala</p><h3>+72 instituições</h3><p>De grandes bancos a cooperativas, fintechs, securitizadoras e instituições públicas — mais de 8 milhões de operações processadas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt pad" id="mercado" aria-labelledby="t-mercado">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="datebadge">Inteligência de Mercado Prognum · 1º semestre de 2026</span>
+      <h2 id="t-mercado">O crédito imobiliário acelera, e a régua regulatória sobe junto</h2>
+    </div>
+    <div class="mstats rv">
+      <div class="ms"><span>Concessões no 1S26</span><b class="num">R$ 180,9 bi</b><p>+23% sobre o 1S25, com mais de 680 mil imóveis financiados — acima do esperado pela ABECIP.</p></div>
+      <div class="ms"><span>Home equity no semestre</span><b class="num green">+31%</b><p>R$ 6,67 bi em concessões, impulsionadas pelo marco legal das garantias. Estoque de R$ 34,1 bi.</p></div>
+      <div class="ms"><span>Espaço estrutural</span><b class="num">11% do PIB</b><p>É a penetração do crédito imobiliário no Brasil — nos EUA, 41%. O ciclo de crescimento está só começando.</p></div>
+    </div>
+    <p class="src">Fonte: ABECIP, BACEN. Inteligência de Mercado Prognum, 1S 2026.</p>
+
+    <div class="head rv" style="margin-top:48px;margin-bottom:18px">
+      <p class="eyebrow">Régua regulatória</p>
+    </div>
+    <div class="reg3 rv" style="margin-top:0">
+      <div class="regc"><p class="eyebrow">Lei 14.382/2022</p><b class="num">30 → 5</b><span class="cap">dias corridos → dias úteis</span><p>Reduz o prazo para registro de escrituras de 30 dias corridos para 5 dias úteis — a operação manual não acompanha esse ritmo.</p></div>
+      <div class="regc"><p class="eyebrow">Marco das Garantias</p><b class="num">2x</b><span class="cap">saldo de CGI, 2019 → 2024</span><p>O saldo em carteira de CGI no Brasil dobrou de 2019 para 2024, e a nova lei tende a acelerar ainda mais esse crescimento.</p></div>
+      <div class="regc"><p class="eyebrow">Resolução CMN 4.966</p><b class="num">4.966</b><span class="cap">novas regras contábeis</span><p>Regras para perdas esperadas e classificação de risco aumentam a exigência de dados e rastreabilidade.</p></div>
+    </div>
+    <div class="statement rv"><i aria-hidden="true">→</i><p>Mais volume e mais exigência de controle, com o mesmo time operacional. <em>É exatamente esse gargalo que a Esteira Digital resolve.</em></p></div>
+  </div>
+</section>
+
+<section class="next pad" id="contato" aria-labelledby="t-cta">
+  <div class="photo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">Próximos passos</p>
+      <h2 id="t-cta" style="color:#fff">Vamos mapear o próximo passo da sua operação</h2>
+    </div>
+    <div class="steps rv">
+      <div class="step"><b>01</b><h3>Diagnóstico</h3><p>Mapeamento da operação atual e dos gargalos por módulo</p></div>
+      <div class="step"><b>02</b><h3>Piloto</h3><p>Ativação dos módulos prioritários com acompanhamento próximo</p></div>
+      <div class="step"><b>03</b><h3>Expansão</h3><p>Rollout do portfólio completo da Esteira Digital</p></div>
+    </div>
+    <div class="formgrid">
+      <form class="form rv" id="lead-form" novalidate>
+        <h3>Agendar uma demonstração</h3>
+        <p class="sub">Conte onde está o gargalo da sua jornada de crédito. O comercial responde com um diagnóstico inicial. <span class="flag">Integrar · webmaster — apontar para o destino do formulário atual</span></p>
+        <div class="frow">
+          <p class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" type="text" autocomplete="name" required></p>
+          <p class="field"><label for="f-empresa">Instituição</label><input id="f-empresa" name="empresa" type="text" autocomplete="organization" required></p>
+          <p class="field"><label for="f-email">E-mail corporativo</label><input id="f-email" name="email" type="email" autocomplete="email" required></p>
+          <p class="field"><label for="f-fone">Telefone / WhatsApp</label><input id="f-fone" name="telefone" type="tel" autocomplete="tel"></p>
+          <div class="field full">
+            <label id="l-gargalo" for="f-msg">Onde vocês mais perdem prazo hoje? <small style="font-weight:400;color:var(--ink-3)">(opcional, marque uma ou mais)</small></label>
+            <div class="chips" role="group" aria-labelledby="l-gargalo">
+              <button type="button" aria-pressed="false" data-chip>Entrada da proposta</button>
+              <button type="button" aria-pressed="false" data-chip>Documentação</button>
+              <button type="button" aria-pressed="false" data-chip>Análise de crédito</button>
+              <button type="button" aria-pressed="false" data-chip>Assinatura</button>
+              <button type="button" aria-pressed="false" data-chip>ITBI</button>
+              <button type="button" aria-pressed="false" data-chip>Registro em cartório</button>
+            </div>
+          </div>
+          <p class="field full"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem" placeholder="Volume mensal de propostas, sistemas em uso, prazo atual…"></textarea></p>
+        </div>
+        <button class="btn sun send" type="submit">Enviar e agendar demonstração</button>
+        <p class="fnote" id="form-note">Seus dados são usados apenas para este contato comercial.</p>
+      </form>
+      <div class="alt-contact rv">
+        <h3>Ou fale direto com o comercial</h3>
+        <p>Atendimento para bancos, cooperativas, fintechs, securitizadoras e instituições públicas em todo o Brasil.</p>
+        <div class="ci"><i aria-hidden="true">✆</i><span class="num">(19) 98181-0341</span><button type="button" data-copy="(19) 98181-0341">Copiar</button></div>
+        <div class="ci"><i aria-hidden="true">✉</i><span>marcelo.cavalheri@prognum.com.br</span><button type="button" data-copy="marcelo.cavalheri@prognum.com.br">Copiar</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/prognum-color.png" alt="Prognum">
+    <p class="addr">Prognum Informática Ltda · Rua Quinze de Novembro, 90 — Coberturas 1401/1402, Centro, Niterói/RJ · +55 21 3525-5533</p>
+    <nav aria-label="Institucional">
+      <a href="https://prognum.com.br/">prognum.com.br</a>
+      <a href="https://prognum.com.br/politica-de-privacidade/">Política de Privacidade</a>
+      <a href="https://www.linkedin.com/company/prognuminformatica/">LinkedIn</a>
+      <a href="https://www.instagram.com/prognum.br/">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* reveal sutil — só anima ao entrar na tela; sem JS, tudo fica visível */
+  if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  }
+
+  /* player de módulos */
+  var bar = document.querySelector('.tabsbar');
+  var tabs = bar ? Array.prototype.slice.call(bar.querySelectorAll('[role="tab"]')) : [];
+  function openTab(tab, focus){
+    tabs.forEach(function(t){
+      var on = t===tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var pn = document.getElementById(t.getAttribute('aria-controls'));
+      if (pn) pn.hidden = !on;
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({block:'nearest', inline:'nearest'});
+  }
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ openTab(tab); });
+    tab.addEventListener('keydown', function(ev){
+      if (ev.key==='ArrowRight'){ openTab(tabs[(i+1)%tabs.length], true); ev.preventDefault(); }
+      if (ev.key==='ArrowLeft'){ openTab(tabs[(i-1+tabs.length)%tabs.length], true); ev.preventDefault(); }
+    });
+  });
+
+  /* cards de resultado abrem o módulo correspondente */
+  document.querySelectorAll('[data-open]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var tab = document.getElementById('tab-'+btn.getAttribute('data-open'));
+      if (tab){ openTab(tab); document.getElementById('modulos').scrollIntoView({behavior:'smooth'}); }
+    });
+  });
+
+  /* chips do formulário */
+  document.querySelectorAll('[data-chip]').forEach(function(ch){
+    ch.addEventListener('click', function(){
+      ch.setAttribute('aria-pressed', ch.getAttribute('aria-pressed')==='true' ? 'false' : 'true');
+    });
+  });
+
+  /* copiar contato */
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var v = btn.getAttribute('data-copy');
+      function done(){ var t=btn.textContent; btn.textContent='Copiado ✓'; setTimeout(function(){btn.textContent=t;},1600); }
+      function fallback(){
+        var r=document.createRange(), s=btn.parentElement.querySelector('span');
+        r.selectNodeContents(s); var sel=getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        try{ document.execCommand('copy'); done(); }catch(e){}
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(v).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+
+  /* formulário — fallback: abre e-mail pré-preenchido para o comercial.
+     WEBMASTER: substituir este handler pelo POST do destino atual do site. */
+  var form = document.getElementById('lead-form');
+  if (form) form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (!form.reportValidity || form.reportValidity()) {
+      var g = Array.prototype.filter.call(document.querySelectorAll('[data-chip]'), function(c){return c.getAttribute('aria-pressed')==='true';})
+              .map(function(c){return c.textContent.trim();}).join(', ');
+      var v = function(id){ var el=document.getElementById(id); return el && el.value ? el.value : '—'; };
+      var body = 'Nome: '+v('f-nome')+'\nInstituição: '+v('f-empresa')+'\nE-mail: '+v('f-email')+'\nTelefone: '+v('f-fone')+'\nGargalos: '+(g||'—')+'\nMensagem: '+v('f-msg');
+      var note = document.getElementById('form-note');
+      note.textContent = 'Abrindo seu e-mail… Se não abrir, escreva para marcelo.cavalheri@prognum.com.br';
+      location.href = 'mailto:marcelo.cavalheri@prognum.com.br?subject='+encodeURIComponent('Esteira Digital SCCI — pedido de demonstração')+'&body='+encodeURIComponent(body);
+    }
+  });
+})();
+</script>
+</body>
+</html>
