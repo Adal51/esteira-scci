@@ -250,7 +250,7 @@ section{position:relative}
 .regc b{font-family:var(--fd);font-size:38px;color:var(--blue);line-height:1.05;margin-top:6px}
 .regc .cap{font:500 12px/1.3 var(--fb);color:var(--ink-3);padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:10px}
 .regc p{color:var(--ink-2);font-size:14px}
-.statement{margin-top:18px;display:flex;gap:16px;align-items:center;padding:24px 28px;border-radius:var(--r);background:var(--blue);color:#fff;font-family:var(--fd);font-size:clamp(19px,2.2vw,25px);line-height:1.3}
+.statement{text-wrap:pretty;margin-top:18px;display:flex;gap:16px;align-items:center;padding:24px 28px;border-radius:var(--r);background:var(--blue);color:#fff;font-family:var(--fd);font-size:clamp(19px,2.2vw,25px);line-height:1.3}
 .statement em{color:var(--orange)}
 .statement i{font-style:normal;flex-shrink:0;color:var(--orange);font-size:24px}
 @media (max-width:900px){.mstats{grid-template-columns:1fr}.reg3{grid-template-columns:1fr}}
@@ -265,7 +265,7 @@ section{position:relative}
 .step b{font:700 12px/1 var(--fb);letter-spacing:.1em;color:var(--orange)}
 .step h3{font-size:23px;margin-top:10px;color:#fff}
 .step p{margin-top:8px;font-size:14px;color:#cfd9f0}
-.formgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:start}
+.formgrid{max-width:780px;margin:0 auto;scroll-margin-top:84px}
 .form{background:#fff;color:var(--ink);border-radius:var(--r);padding:clamp(22px,3vw,34px);box-shadow:0 30px 80px -40px rgba(0,0,0,.5)}
 .form h3{font-size:26px}
 .form .sub{margin-top:8px;font-size:14px;color:var(--ink-2)}
@@ -281,15 +281,7 @@ section{position:relative}
 .chips button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
 .form .send{margin-top:20px;width:100%;justify-content:center}
 .form .fnote{margin-top:12px;font-size:12px;color:var(--ink-3);text-align:center}
-.alt-contact{display:grid;gap:14px}
-.alt-contact h3{font-size:24px;color:#fff}
-.alt-contact p{font-size:14.5px;color:#cfd9f0;max-width:44ch}
-.ci{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:15px}
-.ci i{font-style:normal;color:var(--orange)}
-.ci span{word-break:break-all}
-.ci button{margin-left:auto;font:600 12px/1 var(--fb);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px;cursor:pointer;flex-shrink:0}
-.ci button:hover{background:rgba(255,255,255,.22)}
-@media (max-width:980px){.formgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+@media (max-width:980px){.steps{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding-block:34px;background:#fff}
@@ -331,7 +323,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <li><a href="#resultados">Resultados</a></li>
       <li><a href="#mercado">Mercado</a></li>
     </ul>
-    <a class="btn primary" href="#contato">Agendar demonstração</a>
+    <a class="btn primary" href="#agendar">Agendar demonstração</a>
   </div>
 </nav>
 
@@ -342,7 +334,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <h1>Da simulação à liberação das garantias, <em>em uma única plataforma.</em></h1>
       <p class="lead">Certidões, avaliação do imóvel, certificado e assinatura digital, ITBI e registro em cartório — serviços que hoje vivem em portais separados, integrados em um só fluxo. Com status em tempo real para o time e autosserviço para o cliente final.</p>
       <div class="ctas">
-        <a class="btn primary" href="#contato">Agendar demonstração</a>
+        <a class="btn primary" href="#agendar">Agendar demonstração</a>
         <a class="btn ghost" href="#modulos">Conhecer os serviços</a>
       </div>
       <p class="reg"><b>Lei 14.382/2022:</b><span>registro do contrato em até 5 dias úteis. A esteira manual não acompanha.</span></p>
@@ -410,9 +402,9 @@ footer a:hover{color:var(--blue);text-decoration:underline}
           <div class="lt" role="listitem"><img src="img/l/priv_10.webp" alt="Rodobens" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_11.webp" alt="Sicoob" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_12.webp" alt="Ailos" loading="lazy"></div>
-          <div class="lt" role="listitem"><img src="img/l/priv_13.webp" alt="Banco Semear" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/oxy.webp" alt="Oxy Constrói" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_14.webp" alt="Sicredi" loading="lazy"></div>
-          <div class="lt" role="listitem"><img src="img/l/priv_15.webp" alt="Unicred" loading="lazy"></div>
+          <div class="lt" role="listitem"><img src="img/l/ipiranga.webp" alt="Ipiranga" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_16.webp" alt="Banpará" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_18.webp" alt="CashMe" loading="lazy"></div>
           <div class="lt" role="listitem"><img src="img/l/priv_20.webp" alt="Banese" loading="lazy"></div>
@@ -428,7 +420,6 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <div class="pubgrid" role="list" aria-label="Instituições públicas atendidas">
         <div class="lt" role="listitem"><img src="img/l/pubn_01.webp" alt="CFIAe" loading="lazy"></div>
         <div class="lt" role="listitem"><img src="img/l/pubn_02.webp" alt="Banese" loading="lazy"></div>
-        <div class="lt" role="listitem"><img src="img/l/pubn_03.webp" alt="BRB" loading="lazy"></div>
         <div class="lt" role="listitem"><img src="img/l/pubn_04.webp" alt="Banpará" loading="lazy"></div>
         <div class="lt" role="listitem"><img src="img/l/pubn_05.webp" alt="Cohapar" loading="lazy"></div>
         <div class="lt" role="listitem"><img src="img/l/pubn_06.webp" alt="Cohab Bauru" loading="lazy"></div>
@@ -754,7 +745,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     </div>
     <div class="mstats rv">
       <div class="ms"><span>Concessões no 1S26</span><b class="num">R$ 180,9 bi</b><p>+23% sobre o 1S25, com mais de 680 mil imóveis financiados — acima do esperado pela ABECIP.</p></div>
-      <div class="ms"><span>Home equity no semestre</span><b class="num green">+31%</b><p>R$ 6,67 bi em concessões, impulsionadas pelo marco legal das garantias. Estoque de R$ 34,1 bi.</p></div>
+      <div class="ms"><span>Home equity no semestre</span><b class="num green">+31%</b><p>R$ 6,67 bi em concessões no 1º semestre de 2026, impulsionadas pelo marco legal das garantias.</p></div>
       <div class="ms"><span>Espaço estrutural</span><b class="num">11% do PIB</b><p>É a penetração do crédito imobiliário no Brasil — nos EUA, 41%. O ciclo de crescimento está só começando.</p></div>
     </div>
     <p class="src">Fonte: ABECIP, BACEN. Inteligência de Mercado Prognum, 1S 2026.</p>
@@ -764,10 +755,10 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     </div>
     <div class="reg3 rv" style="margin-top:0">
       <div class="regc"><p class="eyebrow">Lei 14.382/2022</p><b class="num">30 → 5</b><span class="cap">dias corridos → dias úteis</span><p>Reduz o prazo para registro de escrituras de 30 dias corridos para 5 dias úteis — a operação manual não acompanha esse ritmo.</p></div>
-      <div class="regc"><p class="eyebrow">Marco das Garantias</p><b class="num">2x</b><span class="cap">saldo de CGI, 2019 → 2024</span><p>O saldo em carteira de CGI no Brasil dobrou de 2019 para 2024, e a nova lei tende a acelerar ainda mais esse crescimento.</p></div>
+      <div class="regc"><p class="eyebrow">Marco das Garantias</p><b class="num">+27%</b><span class="cap">estoque de CGI em 12 meses · R$ 34,1 bi em jun/26</span><p>O saldo em carteira dobrou de 2019 a 2024 e, com o novo marco legal das garantias, segue acelerando.</p></div>
       <div class="regc"><p class="eyebrow">Resolução CMN 4.966</p><b class="num">4.966</b><span class="cap">novas regras contábeis</span><p>Regras para perdas esperadas e classificação de risco aumentam a exigência de dados e rastreabilidade.</p></div>
     </div>
-    <div class="statement rv"><i aria-hidden="true">→</i><p>Mais volume e mais exigência de controle, com o mesmo time operacional. <em>É exatamente esse gargalo que a Esteira Digital resolve.</em></p></div>
+    <div class="statement rv"><i aria-hidden="true">→</i><p>Mais volume e mais exigência de controle, com o mesmo time operacional. <em>É&nbsp;exatamente esse gargalo que a Esteira Digital resolve.</em></p></div>
   </div>
 </section>
 
@@ -783,7 +774,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       <div class="step"><b>02</b><h3>Piloto</h3><p>Ativação dos serviços prioritários com acompanhamento próximo</p></div>
       <div class="step"><b>03</b><h3>Expansão</h3><p>Rollout do portfólio completo da Esteira Digital</p></div>
     </div>
-    <div class="formgrid">
+    <div class="formgrid" id="agendar">
       <form class="form rv" id="lead-form" novalidate>
         <h3>Agendar uma demonstração</h3>
         <p class="sub">Conte onde está o gargalo da sua jornada de crédito. O comercial responde com um diagnóstico inicial. <span class="flag">Integrar · webmaster — apontar para o destino do formulário atual</span></p>
@@ -808,12 +799,6 @@ footer a:hover{color:var(--blue);text-decoration:underline}
         <button class="btn sun send" type="submit">Enviar e agendar demonstração</button>
         <p class="fnote" id="form-note">Seus dados são usados apenas para este contato comercial.</p>
       </form>
-      <div class="alt-contact rv">
-        <h3>Ou fale direto com o comercial</h3>
-        <p>Atendimento para bancos, cooperativas, fintechs, securitizadoras e instituições públicas em todo o Brasil.</p>
-        <div class="ci"><i aria-hidden="true">✆</i><span class="num">(19) 98181-0341</span><button type="button" data-copy="(19) 98181-0341">Copiar</button></div>
-        <div class="ci"><i aria-hidden="true">✉</i><span>marcelo.cavalheri@prognum.com.br</span><button type="button" data-copy="marcelo.cavalheri@prognum.com.br">Copiar</button></div>
-      </div>
     </div>
   </div>
 </section>
@@ -904,7 +889,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
       var v = function(id){ var el=document.getElementById(id); return el && el.value ? el.value : '—'; };
       var body = 'Nome: '+v('f-nome')+'\nInstituição: '+v('f-empresa')+'\nE-mail: '+v('f-email')+'\nTelefone: '+v('f-fone')+'\nGargalos: '+(g||'—')+'\nMensagem: '+v('f-msg');
       var note = document.getElementById('form-note');
-      note.textContent = 'Abrindo seu e-mail… Se não abrir, escreva para marcelo.cavalheri@prognum.com.br';
+      note.textContent = 'Abrindo seu aplicativo de e-mail para concluir o envio…';
       location.href = 'mailto:marcelo.cavalheri@prognum.com.br?subject='+encodeURIComponent('Esteira Digital SCCI — pedido de demonstração')+'&body='+encodeURIComponent(body);
     }
   });
