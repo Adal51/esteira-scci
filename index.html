@@ -208,6 +208,19 @@ section{position:relative}
 .kpiband b{font-family:var(--fd);font-size:23px;color:var(--blue);white-space:nowrap}
 .kpiband span{font-size:13px;color:var(--ink-2)}
 .panel .visual{min-width:0}
+.ops{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ops .lede{grid-column:1/-1;display:grid;gap:8px;max-width:720px}
+.ops .lede h3{font-size:clamp(24px,2.8vw,32px)}
+.ops .lede p{color:var(--ink-2);font-size:15.5px}
+.opc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:10px}
+.opc h4{margin:0;font-family:var(--fd);font-weight:400;font-size:22px;line-height:1.15}
+.opc p{font-size:14.5px;color:var(--ink-2)}
+.opc.hl{border-color:var(--blue-light);background:linear-gradient(180deg,#fff,var(--blue-light) 260%);box-shadow:var(--shadow)}
+.opc .tag{align-self:flex-start;font:700 10.5px/1 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--blue-light);border-radius:999px;padding:6px 10px}
+.opc.hl .tag{background:var(--orange);color:#3b2a06}
+.opc .go{margin-top:auto;align-self:flex-start;font:600 14px/1 var(--fb);color:var(--blue);text-decoration:none}
+.opc .go:hover{text-decoration:underline}
+@media (max-width:860px){.ops{grid-template-columns:1fr}}
 .endnote{display:flex;gap:12px;align-items:center;padding:16px clamp(22px,3.5vw,38px);border-top:1px solid var(--line);background:var(--surface);font-size:14px;color:var(--ink-2)}
 .endnote .d10{flex-shrink:0;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--blue);color:var(--orange);font:700 12px/1 var(--fb)}
 .endnote b{color:var(--ink)}
@@ -701,6 +714,24 @@ footer a:hover{color:var(--blue);text-decoration:underline}
         <div class="cg"><small>Quando há imóvel na garantia</small><p>Avaliação do imóvel · Certidões · ITBI · Registro de imóveis</p></div>
       </div>
     </div>
+    <div class="ops rv">
+      <div class="lede">
+        <p class="eyebrow">Modelos de operação</p>
+        <h3>Com a sua equipe — ou com a Prognum operando por você</h3>
+        <p>A mesma esteira, dois jeitos de rodar. Escolha por serviço, e mude quando a operação crescer.</p>
+      </div>
+      <div class="opc">
+        <span class="tag">Plataforma</span>
+        <h4>Sua equipe opera</h4>
+        <p>Seus analistas conduzem a jornada na plataforma: os 9 serviços acionados automaticamente, status em tempo real e pagamento por uso, sem custo de setup.</p>
+      </div>
+      <div class="opc hl">
+        <span class="tag">BPO · operação completa</span>
+        <h4>A Prognum opera a esteira por você</h4>
+        <p>No modelo de BPO, nosso time assume a operação completa da Esteira Digital — documentação, certidões, avaliação, ITBI e registro conduzidos de ponta a ponta. Sua instituição acompanha tudo em tempo real, sem precisar montar estrutura operacional.</p>
+        <a class="go" href="#agendar">Falar sobre BPO →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -792,6 +823,7 @@ footer a:hover{color:var(--blue);text-decoration:underline}
               <button type="button" aria-pressed="false" data-chip>Assinatura</button>
               <button type="button" aria-pressed="false" data-chip>ITBI</button>
               <button type="button" aria-pressed="false" data-chip>Registro em cartório</button>
+              <button type="button" aria-pressed="false" data-chip>Operação completa (BPO)</button>
             </div>
           </div>
           <p class="field full"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem" placeholder="Volume mensal de propostas, sistemas em uso, prazo atual…"></textarea></p>
