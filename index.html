@@ -141,8 +141,15 @@ section{position:relative}
 
 /* ---------- quem confia ---------- */
 .proof .top{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center}
-.proof .stat b{display:block;font-family:var(--fd);font-size:clamp(52px,6vw,76px);color:var(--blue);line-height:.95;letter-spacing:-.02em}
-.proof .stat p{margin-top:10px;max-width:34ch;font-size:15.5px;color:var(--ink-2)}
+.proof .stat h3{font-size:clamp(26px,3vw,36px);max-width:15ch}
+.gbars{display:grid;gap:9px;margin-top:20px;width:min(380px,100%)}
+.gb{display:grid;grid-template-columns:62px 1fr 52px;gap:10px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+.gb .t{display:block;height:12px;border-radius:6px;background:var(--blue-light);overflow:hidden}
+.gb .f{display:block;height:100%;border-radius:6px;background:var(--blue)}
+.gb .v{font:600 13px/1 var(--fb);color:var(--blue);text-align:right;font-variant-numeric:tabular-nums}
+.gb.mkt{color:var(--ink);font-weight:600}
+.gb.mkt .f{background:var(--ink-3)}
+.gb.mkt .v{color:var(--ink)}
 .proof .stat small{display:block;margin-top:10px;font-size:11.5px;color:var(--ink-3);font-style:italic}
 .lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .lt{background:#fff;border:1px solid var(--line);border-radius:12px;aspect-ratio:1.9;display:grid;place-items:center;padding:12% 14%;min-width:0;overflow:hidden}
@@ -399,9 +406,15 @@ footer a:hover{color:var(--blue);text-decoration:underline}
     <div class="top">
       <div class="stat rv">
         <p class="eyebrow" id="t-prova">Quem confia na Prognum</p>
-        <b class="num" style="margin-top:12px">66% a.a.</b>
-        <p>Nos últimos 2 anos, clientes Prognum* cresceram suas carteiras de crédito imobiliário em cerca de 66% a.a. — 5x mais que a média do mercado.</p>
-        <small>*Instituições financeiras · Fonte: Banco Central do Brasil</small>
+        <h3 style="margin-top:12px">Quem está com a Prognum cresceu mais</h3>
+        <div class="gbars" role="img" aria-label="Crescimento do saldo de financiamentos imobiliários em 12 meses: Inter +38%, Sicredi +32%, Sicoob +32%, Ailos +24%; mercado +13%">
+          <div class="gb"><span>Inter</span><span class="t"><span class="f" style="width:100%"></span></span><span class="v num">+38%</span></div>
+          <div class="gb"><span>Sicredi</span><span class="t"><span class="f" style="width:84.2%"></span></span><span class="v num">+32%</span></div>
+          <div class="gb"><span>Sicoob</span><span class="t"><span class="f" style="width:84.2%"></span></span><span class="v num">+32%</span></div>
+          <div class="gb"><span>Ailos</span><span class="t"><span class="f" style="width:63.2%"></span></span><span class="v num">+24%</span></div>
+          <div class="gb mkt"><span>Mercado</span><span class="t"><span class="f" style="width:34.2%"></span></span><span class="v num">+13%</span></div>
+        </div>
+        <small>Variação do saldo de financiamentos imobiliários, 12 meses (jun/25 → jun/26) · Fonte: BACEN, COSIF 1.6.4</small>
       </div>
       <div>
         <div class="lgrid rv" role="list" aria-label="Clientes Prognum">
